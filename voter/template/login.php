@@ -6,6 +6,7 @@
     <meta name="author" content="colorlib.com">
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
     <link href="assets/login/css/main.css" rel="stylesheet" />
+    <title><?=$template["header"]?></title>
   </head>
   <body>
     <div class="s006">
