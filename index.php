@@ -31,7 +31,6 @@ if(!isset($_REQUEST['submit'])){
                 $stmt = $db->prepare($sql);
 
                 $stmt->bindParam(':election', $_GET['election']);
-                //$stmt->bindParam(':candidate', $_GET['candidate_hold']);
                 $stmt->bindParam(':voter', $_GET['voter_hold']);
         
                 $stmt->execute();
@@ -44,8 +43,6 @@ if(!isset($_REQUEST['submit'])){
                     $election = $_GET['election'];
                     $candidate = $_GET['candidate_hold'];
                     $vote = $_GET['voter_hold'];
-
-
 
                     $sql ='INSERT INTO "main"."tbl_voter_box"("vote_date", "election_id", "candidate_id", "voter_id") VALUES (:date,:election,:candidate,:voter)';
                     $stmt = $db->prepare($sql);
@@ -60,8 +57,7 @@ if(!isset($_REQUEST['submit'])){
                     }else{
                        require('polling_box/template/successful.php');
                     }
-                }
-                
+                } 
             }
         }
     }else{
