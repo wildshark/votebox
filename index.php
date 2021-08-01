@@ -13,7 +13,7 @@ if(!isset($_REQUEST['submit'])){
     if(!isset($_REQUEST['_q'])){
         if(!isset($_REQUEST["_vote"])){
             if(!isset($_REQUEST['_route'])){
-                require("voter/template/login.php"); 
+                require("polling_box/template/login.php"); 
             }else{
                 require("admin/admin.php");
             }
@@ -24,7 +24,7 @@ if(!isset($_REQUEST['submit'])){
                     $image ="assets/images/candidate.png";
                 }
                 $GLOBALS['voter_id'] = $_GET['candidate_id'];
-                require("voter/template/main.php");
+                require("polling_box/template/main.php");
             }elseif($_REQUEST["_vote"] === "cast-vote"){
 
                 $sql ='SELECT *,rowid "NAVICAT_ROWID" FROM "main"."tbl_voter_box" WHERE election_id=:election AND voter_id=:voter  LIMIT 0,1000';
@@ -37,7 +37,7 @@ if(!isset($_REQUEST['submit'])){
                 $stmt->execute();
 
                 if($stmt->fetchColumn() > 0){
-                    require("template/exist.php");
+                    require("polling_box/template/exist.php");
                     exit;
                 }else{
                     $date = date("Y-m-d H:i:s");
@@ -56,9 +56,9 @@ if(!isset($_REQUEST['submit'])){
                     $stmt->bindParam(':voter', $vote);
             
                     if(false == $stmt->execute()){
-                       require('template/faile.php');
+                       require('polling_box/template/failed.php');
                     }else{
-                       require('template/successful.php');
+                       require('polling_box/template/successful.php');
                     }
                 }
                 
