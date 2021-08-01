@@ -2,6 +2,20 @@
 
 include("admin/control/global.php");
 
+if(!isset($_REQUEST["token"])){
+    session_destroy();
+    require("template/login.php");
+    exit;
+}
+
+if(!isset($_COOKIE['user'])){
+    session_destroy();
+    require("template/login.php");
+    exit;
+}
+
+$username = $_COOKIE['user'];
+
 if(!isset($_SESSION['token'])){
     require('template/login.php'); 
 }else{
@@ -52,7 +66,7 @@ if(!isset($_SESSION['token'])){
             break;
     
             default:
-                echo "505 page not found";
+                require('template/404.php');
     
         }
     }

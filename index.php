@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+setcookie("clock",time(), time()+3600); 
 
 include("control/connection.php");
 include("module/election.php");
@@ -36,32 +37,31 @@ if(!isset($_REQUEST['submit'])){
                 $stmt->execute();
 
                 if($stmt->fetchColumn() > 0){
-                    echo"you have already cast your vote";
+                    require("template/exist.php");
                     exit;
                 }else{
+                    $date = date("Y-m-d H:i:s");
+                    $election = $_GET['election'];
+                    $candidate = $_GET['candidate_hold'];
+                    $vote = $_GET['voter_hold'];
+
+
+
                     $sql ='INSERT INTO "main"."tbl_voter_box"("vote_date", "election_id", "candidate_id", "voter_id") VALUES (:date,:election,:candidate,:voter)';
                     $stmt = $db->prepare($sql);
             
-                    $stmt->bindParam(':date',date("Y-m-d H:i:s"));
-                    $stmt->bindParam(':election', $_GET['election']);
-                    $stmt->bindParam(':candidate', $_GET['candidate_hold']);
-                    $stmt->bindParam(':voter', $_GET['voter_hold']);
+                    $stmt->bindParam(':date',$date);
+                    $stmt->bindParam(':election', $election);
+                    $stmt->bindParam(':candidate', $candidate);
+                    $stmt->bindParam(':voter', $vote);
             
                     if(false == $stmt->execute()){
-                        $url['_vote'] ="failed";
-                        $url['status'] ="failed";
+                       require('template/faile.php');
                     }else{
-                        $url['_vote'] ="successful";
-                        $url['status'] ="successful";
+                       require('template/successful.php');
                     }
-
-                    header("location: ?".http_build_query($url));
                 }
                 
-            }elseif($_REQUEST['_vote'] === "successful"){
-                echo "voting is successful";
-            }elseif($_REQUEST['_vote'] === "failed"){
-                echo "voting is failed";
             }
         }
     }else{

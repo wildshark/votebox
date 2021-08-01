@@ -11,17 +11,14 @@
 
     <title><?=$template["header"]?></title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts for this template-->
     <link href="assets/admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+    <!-- Custom styles for this template-->
     <link href="assets/admin/css/sb-admin-2.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this page -->
-    <link href="assets/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,15 +28,14 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-    
-         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3"><?=$template["header"]?></div>
+                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
             </a>
 
             <!-- Divider -->
@@ -47,13 +43,6 @@
 
             <!-- Nav Item - Dashboard -->
             <?=menu($_GET['token'])?>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="assets/admin/img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-            </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -68,11 +57,9 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <form class="form-inline">
-                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </form>
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
 
                     <!-- Topbar Search -->
                     <form
@@ -256,58 +243,19 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                  
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Student List</h6>
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>S/N</th>
-                                            <th>Candidate Name</th>
-                                            <th>Total Vote Count</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                            if((!isset($res))||($res == false)){
-                                                echo"
-                                                    <tr>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-                                                ";
-                                            }else{
-                                                foreach($res as $r){
-                                                   if(!isset($n)){
-                                                        $n = 1;
-                                                   }else{
-                                                       $n = $n + 1;
-                                                   }
-                                                    echo"
-                                                        <tr>
-                                                            <td>{$n}</td>
-                                                            <td>{$r['presidential_name']}</td>
-                                                            <td>{$r['total']}</td>
-                                                            <td></td>
-                                                        </tr>
-                                                    ";
-                                                }
-                                                
-                                            }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+
+                    <!-- 404 Error Text -->
+                    <div class="text-center">
+                        <div class="error mx-auto" data-text="404">404</div>
+                        <p class="lead text-gray-800 mb-5">Page Not Found</p>
+                        <p class="text-gray-500 mb-0">It looks like you found a glitch in the matrix...</p>
+                        <a href="index.html">&larr; Back to Dashboard</a>
                     </div>
+
                 </div>
+                <!-- /.container-fluid -->
+
+            </div>
             <!-- End of Main Content -->
 
             <!-- Footer -->
@@ -333,7 +281,7 @@
 
     <!-- Logout Modal-->
     <?=logout_modal()?>
-
+    
     <!-- Bootstrap core JavaScript-->
     <script src="assets/admin/vendor/jquery/jquery.min.js"></script>
     <script src="assets/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -343,13 +291,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="assets/admin/js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="assets/admin/vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="assets/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="assets/admin/js/demo/datatables-demo.js"></script>
 
 </body>
 

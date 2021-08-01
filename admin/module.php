@@ -3,14 +3,48 @@
 switch($_REQUEST['submit']){
 
     case"login";
-        
-        if(($_REQUEST['email'] !== "a@a.com" )|| ($_REQUEST['password'] !== "pass")){
-            require('admin/template/login.php');
-        }else{
-            $_SESSION['token'] = uniqid(); 
-            $url['_route'] ="dashboard";
+
+        if(!isset($_REQUEST['email'])){
+            header("location: ?_route=admin");
+            exit;
         }
 
+        if(!isset($_REQUEST['password'])){
+            header("location: ?_route=admin");
+            exit;
+        }else{
+
+            $email = $_REQUEST['email'];
+            $password = $_REQUEST['password'];
+
+            $sql = "SELECT * FROM tbl_user WHERE tbl_user.email =:email AND tbl_user.password =:password";
+            $stmt = $db->prepare($sql);
+    
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':password', $password);
+
+            $stmt->execute();
+
+            $row = $stmt->fetch(); 
+            if(!isset($_COOKIE['user'])){
+                setcookie("user", $row['username'], time()+3600);
+            }
+
+            if($stmt->fetchColumn() > 0){
+                header("location: ?_route=admin");
+                exit;
+
+            }else {
+                if(($email !== $row['email'] ) && ($password !== $row['password'])){
+                    session_destroy();
+                    require('admin/template/login.php');
+                }else{
+                    
+                    $_SESSION['token'] = md5(json_encode($row)); 
+                    $url['_route'] ="dashboard";
+                }
+            }
+        }
     break;
 
     case"add-voter";
