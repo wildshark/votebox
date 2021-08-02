@@ -57,7 +57,7 @@ if(!isset($_SESSION['token'])){
 
             case"vote-box";
 
-                $sql ="SELECT tbl_voter_box.election_id, tbl_voter_box.candidate_id, COUNT(tbl_voter_box.voter_id) AS total,  tbl_presidential_candidate.presidential_name FROM tbl_voter_box INNER JOIN tbl_presidential_candidate ON tbl_voter_box.candidate_id = tbl_presidential_candidate.presidential_id WHERE tbl_voter_box.election_id = :election";
+                $sql ="SELECT tbl_voter_box.election_id, tbl_voter_box.candidate_id, count(tbl_voter_box.voter_id) AS total, tbl_presidential_candidate.presidential_name FROM tbl_voter_box INNER JOIN tbl_presidential_candidate ON tbl_voter_box.candidate_id = tbl_presidential_candidate.presidential_id WHERE tbl_voter_box.election_id = :election GROUP BY tbl_voter_box.candidate_id";
                 $stmt = $db->prepare($sql);
                 $stmt->bindParam(':election', $_GET['election']);
                 $stmt->execute();
@@ -71,6 +71,5 @@ if(!isset($_SESSION['token'])){
         }
     }
 }
-
 
 ?>
