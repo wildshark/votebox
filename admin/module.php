@@ -37,7 +37,7 @@ switch($_REQUEST['submit']){
             }else {
                 if(($email !== $row['email'] ) && ($password !== $row['password'])){
                     session_destroy();
-                    require('admin/template/login.php');
+                    $url['_route'] ="admin";
                 }else{
                     
                     $_SESSION['token'] = md5(json_encode($row)); 

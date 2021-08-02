@@ -75,7 +75,4 @@ if(!isset($_REQUEST['submit'])){
     require('admin/module.php');
 }
 
-
-
-
 ?>
