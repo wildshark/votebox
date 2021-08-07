@@ -268,7 +268,7 @@
                                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
                                     src="assets/admin/assets/admin/img/undraw_posting_photo.svg" alt="...">
                                 </div>
-                                <form>
+                                <form action="<?=$_SERVER['PHP_SELF'];?>" method="get">
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
                                             <label for="inputEmail4"><?=$label['label01']?></label>
