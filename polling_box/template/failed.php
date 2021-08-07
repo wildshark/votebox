@@ -10,7 +10,7 @@
   <meta name="description" content="">
   
   
-  <title>failed</title>
+  <title><?=$template["header"]?></title>
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
@@ -23,10 +23,6 @@
 <body>
   
   <section class="features15 cid-sEOuimwBXD" id="features16-5">
-
-    
-
-    
     <div class="container">
         <div class="content-wrapper">
             <div class="row align-items-center">

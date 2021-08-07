@@ -10,7 +10,7 @@
   <meta name="description" content="">
   
   
-  <title>successful</title>
+  <title><?=$template["header"]?></title>
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">

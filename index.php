@@ -23,6 +23,7 @@ if(!isset($_REQUEST['submit'])){
                 if(!isset($image)){
                     $image ="assets/images/candidate.png";
                 }
+                $url_qry = $_SERVER['REQUEST_URI'];
                 $GLOBALS['voter_id'] = $_GET['candidate_id'];
                 require("polling_box/template/main.php");
             }elseif($_REQUEST["_vote"] === "cast-vote"){

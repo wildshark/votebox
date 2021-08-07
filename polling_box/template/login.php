@@ -12,7 +12,7 @@
     <div class="s006">
       <form action="index.php" method="get">
         <fieldset>
-          <legend>Enter Candidate's voters code</legend>
+          <legend><?=$lang['title01']?></legend>
           <div class="inner-form">
             <div class="input-field">
               <button class="btn-search" type="button" name="_submit" value="search">
@@ -23,13 +23,6 @@
               <input  type="text" placeholder="" name="_q"/>
             </div>
           </div>
-          <!--div class="suggestion-wrap">
-            <span>New Arrivals</span>
-            <span>Ladies</span>
-            <span>Mens</span>
-            <span>Accessories</span>
-            <span>Sale</span>
-          </div-->
         </fieldset>
       </form>
     </div>

@@ -9,5 +9,13 @@
     },
     "created_date":"",
     "last_update":"",
-    "license":""
+    "license":"",
+    "lang":{
+        "en_us":{
+            "title01":"Enter Candidate's voters code",
+            "title02":"Tab On Your Candidate"
+        }
+
+    }
+
 }

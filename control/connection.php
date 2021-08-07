@@ -9,3 +9,4 @@ try {
 
 $config = json_decode(file_get_contents("config.json"),TRUE);
 $template["header"] = $config['application'];
+$lang = $config['lang']['en_us'];
