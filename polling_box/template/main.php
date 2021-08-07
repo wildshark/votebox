@@ -71,21 +71,21 @@
                     <script>
                       $('#my{$model}').on('click',function(){
                         Swal.fire({
-                              title: 'Are you sure?',
-                              text: 'Do you want to vote for {$name}',
-                              icon: 'warning',
-                              showCancelButton: true,
-                              confirmButtonText: 'Yes, Vote!',
-                              cancelButtonText: 'No, Cancel vote'
-                              }).then((result) => {
-                              if (result.isConfirmed) {
-                                  location.replace('?_vote=cast-vote&{$url}')
+                            title: 'Are you sure?',
+                            text: 'Do you want to vote for {$name}',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Yes, Vote!',
+                            cancelButtonText: 'No, Cancel vote'
+                          }).then((result) => {
+                            if (result.isConfirmed) {
+                              location.replace('?_vote=cast-vote&{$url}')
                               // For more information about handling dismissals please visit
                               // https://sweetalert2.github.io/#handling-dismissals
-                              } else if (result.dismiss === Swal.DismissReason.cancel) {
-                                exit;
-                              }
-                          })
+                            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                              exit;
+                             }
+                        })
                       })
                   </script>
                   ";
