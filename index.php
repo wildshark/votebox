@@ -13,6 +13,7 @@ if(!isset($_REQUEST['submit'])){
     if(!isset($_REQUEST['_q'])){
         if(!isset($_REQUEST["_vote"])){
             if(!isset($_REQUEST['_route'])){
+                $label = $polling_box_lang['login_page'];
                 require("polling_box/template/login.php"); 
             }else{
                 require("admin/admin.php");
@@ -25,6 +26,7 @@ if(!isset($_REQUEST['submit'])){
                 }
                 $url_qry = $_SERVER['REQUEST_URI'];
                 $GLOBALS['voter_id'] = $_GET['candidate_id'];
+                $label = $polling_box_lang['polling_page'];
                 require("polling_box/template/main.php");
             }elseif($_REQUEST["_vote"] === "cast-vote"){
 
@@ -37,6 +39,7 @@ if(!isset($_REQUEST['submit'])){
                 $stmt->execute();
 
                 if($stmt->fetchColumn() > 0){
+                    $label = $polling_box_lang['exist_page']; 
                     require("polling_box/template/exist.php");
                     exit;
                 }else{
@@ -54,8 +57,10 @@ if(!isset($_REQUEST['submit'])){
                     $stmt->bindParam(':voter', $vote);
             
                     if(false == $stmt->execute()){
+                        $label = $polling_box_lang['failed_page']; 
                        require('polling_box/template/failed.php');
                     }else{
+                        $label = $polling_box_lang['success_page'];
                        require('polling_box/template/successful.php');
                     }
                 } 

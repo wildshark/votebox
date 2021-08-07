@@ -39,7 +39,7 @@
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome to Votebox!</h1>
+                                        <h1 class="h4 text-gray-900 mb-4"><?=$label['title']?></h1>
                                     </div>
                                     <form class="user" action="index.php" method="post">
                                         <div class="form-group">
@@ -51,14 +51,14 @@
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
                                                 <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                                <label class="custom-control-label" for="customCheck"><?=$label['CustomCheck']?></label>
                                             </div>
                                         </div>
-                                        <button name="submit" value ="login" class="btn btn-primary btn-user btn-block">Login</button>
+                                        <button name="submit" value ="login" class="btn btn-primary btn-user btn-block"><?=$label['button']?></button>
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html"><?=$label['link']?></a>
                                     </div>
                                     
                                 </div>

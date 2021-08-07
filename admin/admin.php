@@ -2,6 +2,8 @@
 
 include("admin/control/global.php");
 
+$label =$admin_lang['login_page'];
+
 if(!isset($_REQUEST["token"])){
     session_destroy();
     require("template/login.php");
@@ -26,6 +28,7 @@ if(!isset($_SESSION['token'])){
         switch($_REQUEST['_route']){
 
             case"dashboard";
+                $label =$admin_lang['dash_page'];
                 require('template/dashboard.php');
             break;
 
@@ -34,6 +37,7 @@ if(!isset($_SESSION['token'])){
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 $res = $stmt->fetchAll();
+                $label =$admin_lang['election_page'];
                 require('template/add.election.php');
             break;
     
@@ -42,6 +46,7 @@ if(!isset($_SESSION['token'])){
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
                 $res = $stmt->fetchAll();
+                $label =$admin_lang['voter_page'];
                 require('template/add.voter.php');
             break;
     
@@ -52,6 +57,7 @@ if(!isset($_SESSION['token'])){
                 $stmt->bindParam(':election', $_GET['election']);
                 $stmt->execute();
                 $res = $stmt->fetchAll();
+                $label =$admin_lang['candidate_page'];
                 require('template/add.candidate.php');
             break;
 
@@ -62,6 +68,7 @@ if(!isset($_SESSION['token'])){
                 $stmt->bindParam(':election', $_GET['election']);
                 $stmt->execute();
                 $res = $stmt->fetchAll();
+                $label =$admin_lang['vote_box_page'];
                 require('template/add.votebox.php');
             break;
     

@@ -9,4 +9,5 @@ try {
 
 $config = json_decode(file_get_contents("config.json"),TRUE);
 $template["header"] = $config['application'];
-$lang = $config['lang']['en_us'];
+$polling_box_lang = $config['lang']['en_us']['polling_box'];
+$admin_lang = $config['lang']['en_us']['administration'];

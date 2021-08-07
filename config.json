@@ -12,10 +12,81 @@
     "license":"",
     "lang":{
         "en_us":{
-            "title01":"Enter Candidate's voters code",
-            "title02":"Tab On Your Candidate"
+            "polling_box":{
+                "login_page":{
+                    "title":"Enter Candidate's voters code"
+                },
+                "polling_page":{
+                    "title":"Tab On Your Candidate"
+                },
+                "success_page":{
+                    "title":"Vote Successful",
+                    "message":"Your voices are being heard and you’re proving to our ancestors that their struggles were not in vain. Now we have one more thing we need to do to walk in our true power, and that is to vote.<br><br>Click on the button to return you&nbsp;",
+                    "button":""
+                },
+                "failed_page":{
+                    "title":"Your Vote failed",
+                    "message":"We all have to vote like our lives and the world depend on it, because they do. The only way to be certain of the future is to make it ourselves.",
+                    "button":""
+                },
+                "exist_page":{
+                    "title":"Your Vote All Exist&nbsp;",
+                    "message":"We all have to vote like our lives and the world depend on it, because they do. The only way to be certain of the future is to make it ourselves.",
+                    "button":""
+                }
+            },
+            "administration":{
+                "login_page":{
+                    "title":"Welcome to Votebox!",
+                    "CustomCheck":"Remember Me",
+                    "button":"Login",
+                    "link":"Forgot Password?"
+                },
+                "dash_page":{
+                    "title":""
+                },
+
+                "voter_page":{
+                    "title01":"Create Student's Voter Card",
+                    "label01":"Student Name",
+                    "label02":"Index",
+                    "label03":"PIN",
+                    "button":"Save",
+                    "title04":"Student List",
+                    "label05":"Student Name",
+                    "label06":"Index Num.",
+                    "label07":"Voter's Pin",
+                    "label08":"Status"
+                },
+                "election_page":{
+                    "title01":"Create election",
+                    "label01":"Election Year",
+                    "label02":"Election Name",
+                    "button01":"Submit",
+                    "title02":"Student List",
+                    "label03":"S/N",
+                    "label04":"Election Year",
+                    "label05":"Election Name",
+                    "link01":"Add Candidate",
+                    "link02":" View VoteBox"
+                },
+                "candidate_page":{
+                    "title01":"Create election",
+                    "label01":"Candidate 1",
+                    "label02":"Picture Url",
+                    "button01":"Submit",
+                    "title02":"Student List",
+                    "label03":"S/N",
+                    "label04":"Candidate Name",
+                    "link01":"Picture"
+                },
+                "vote_box_page":{
+                    "title01":"Student List",
+                    "label01":"S/N",
+                    "label02":"Candidate Name",
+                    "label03":"Total Vote Count"
+                }
+            }
         }
-
     }
-
 }

@@ -261,7 +261,7 @@
                         <!-- Illustrations -->
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Create Student's Voter Card</h6>
+                                <h6 class="m-0 font-weight-bold text-primary"><?=$label['title01']?></h6>
                             </div>
                             <div class="card-body">
                                 <div class="text-center">
@@ -271,20 +271,20 @@
                                 <form>
                                     <div class="form-row">
                                         <div class="form-group col-md-4">
-                                            <label for="inputEmail4">Student Name</label>
+                                            <label for="inputEmail4"><?=$label['label01']?></label>
                                             <input type="text" name="student-name" class="form-control" id="inputEmail4" placeholder="Full Name">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="inputPassword4">Index</label>
+                                            <label for="inputPassword4"><?=$label['label02']?></label>
                                             <input type="text" name="student-index" class="form-control" id="inputPassword4" placeholder="Index Number">
                                         </div>
                                         <div class="form-group col-md-4">
-                                            <label for="inputPassword4">PIN</label>
+                                            <label for="inputPassword4"><?=$label['label03']?></label>
                                             <input type="text" name="student-pin" value="<?=time()?>" class="form-control" id="inputPassword4" placeholder="Voting Pin">
                                         </div>
                                     </div>
                                       
-                                    <button type="submit" name="submit" value="add-voter" class="btn btn-primary">Save</button>
+                                    <button type="submit" name="submit" value="add-voter" class="btn btn-primary"><?=$label['button']?></button>
                                 </form>
                             </div>
                         </div>
@@ -293,17 +293,17 @@
                  <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Student List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><?=$label['title04']?></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Student Name</th>
-                                            <th>Index Num.</th>
-                                            <th>Voter's Pin</th>
-                                            <th>Status</th>
+                                            <th><?=$label['label05']?></th>
+                                            <th><?=$label['label06']?></th>
+                                            <th><?=$label['label07']?></th>
+                                            <th><?=$label['label08']?></th>
                                             <th></th>
                                         </tr>
                                     </thead>

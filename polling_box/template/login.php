@@ -12,7 +12,7 @@
     <div class="s006">
       <form action="index.php" method="get">
         <fieldset>
-          <legend><?=$lang['title01']?></legend>
+          <legend><?=$label['title']?></legend>
           <div class="inner-form">
             <div class="input-field">
               <button class="btn-search" type="button" name="_submit" value="search">

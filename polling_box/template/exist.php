@@ -35,9 +35,10 @@
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
                         <h6 class="card-title mbr-fonts-style display-2">
-                            <strong>Your Vote All Exist&nbsp;</strong></h6>
+                            <strong><?=$label['title']?></strong></h6>
                         <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                            We all have to vote like our lives and the world depend on it, because they do. The only way to be certain of the future is to make it ourselves.</p>
+                            <?=$label['message']?>
+                        </p>
                         <div class="mbr-section-btn mt-3">
                             <a class="btn btn-warning display-4" href="?welcome=back">Go Back</a>
                         </div>

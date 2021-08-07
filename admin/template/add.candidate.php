@@ -279,7 +279,7 @@
                                     <input type="text" name="picture" class="form-control" id="inputPassword4" placeholder="http://">
                                 </div>
                                 </div>
-                                <button type="submit" name="submit" value="add-candidate" class="btn btn-primary"><?=$label['button']?></button>
+                                <button type="submit" name="submit" value="add-candidate" class="btn btn-primary"><?=$label['button01']?></button>
                             </form>
                         </div>
                     </div>
@@ -294,7 +294,7 @@
                                         <tr>
                                             <th><?=$label['label03']?></th>
                                             <th><?=$label['label04']?></th>
-                                            <th><?=$label['label05']?></th>
+                                            <th><?=$label['link01']?></th>
                                             <th></th>
                                         </tr>
                                     </thead>

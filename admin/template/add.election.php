@@ -261,7 +261,7 @@
                         <!-- Illustrations -->
                         <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Create election</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><?=$label['title01']?></h6>
                         </div>
                         <div class="card-body">
                             <div class="text-center">
@@ -271,30 +271,30 @@
                             <form action="index.php" method="post">
                                 <div class="form-row">
                                 <div class="form-group col-md-6">
-                                    <label for="inputEmail4">Election Year</label>
+                                    <label for="inputEmail4"><?=$label['label01']?></label>
                                     <input type="text" name="election-year" class="form-control" id="inputEmail4" placeholder="Candidate Name">
                                 </div>
                                 <div class="form-group col-md-6">
-                                    <label for="inputPassword4">Election Name</label>
+                                    <label for="inputPassword4"><?=$label['label02']?></label>
                                     <input type="text" name="election-name" class="form-control" id="inputPassword4" placeholder="http://">
                                 </div>
                                 </div>
-                                <button type="submit" name="submit" value="add-election" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submit" value="add-election" class="btn btn-primary"><?=$label['button01']?></button>
                             </form>
                         </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Student List</h6>
+                            <h6 class="m-0 font-weight-bold text-primary"><?=$label['title02']?></h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>S/N</th>
-                                            <th>Election Year</th>
-                                            <th>Election Name</th>
+                                            <th><?=$label['label03']?></th>
+                                            <th><?=$label['label04']?></th>
+                                            <th><?=$label['label05']?></th>
                                             <th></th>
                                         </tr>
                                     </thead>
@@ -323,8 +323,8 @@
                                                             <td>{$r['election_year']}</td>
                                                             <td>{$r['election_name']}</td>
                                                             <td>
-                                                                <a href='?_route=candidate&token={$_REQUEST['token']}&election={$r['election_id']}'>Add Candidate</a> |
-                                                                <a href='?_route=vote-box&token={$_REQUEST['token']}&election={$r['election_id']}'>View VoteBox</a>
+                                                                <a href='?_route=candidate&token={$_REQUEST['token']}&election={$r['election_id']}'>{$label['link01']}</a> |
+                                                                <a href='?_route=vote-box&token={$_REQUEST['token']}&election={$r['election_id']}'>{$label['link02']}</a>
                                                             </td>
                                                         </tr>
                                                     ";

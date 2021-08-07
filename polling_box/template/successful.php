@@ -35,9 +35,10 @@
                 <div class="col-12 col-lg">
                     <div class="text-wrapper">
                         <h6 class="card-title mbr-fonts-style display-2">
-                            <strong>Vote Successful</strong></h6>
+                            <strong><?=$label['title']?></strong></h6>
                         <p class="mbr-text mbr-fonts-style mb-4 display-4">
-                            Your voices are being heard and you’re proving to our ancestors that their struggles were not in vain. Now we have one more thing we need to do to walk in our true power, and that is to vote.<br><br>Click on the button to return you&nbsp;</p>
+                            <?=$label['message']?>
+                        </p>
                         <div class="mbr-section-btn mt-3"><a class="btn btn-warning display-4" href="?welcomee=back">Go Back</a></div>
                     </div>
                 </div>

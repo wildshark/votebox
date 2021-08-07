@@ -31,7 +31,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <h3 class="mbr-section-title mbr-fonts-style align-center mb-4 display-2">
-                    <strong><?=$lang['title02']?></strong></h3>
+                    <strong><?=$label['title']?></strong></h3>
                 
             </div>
             <?php
