@@ -34,62 +34,62 @@
                     <strong><?=$label['title']?></strong></h3>
                 
             </div>
-            <?php
-                foreach ($presidential_candidate as $r){
-                  $photo = $r['photo'];
-                  $name = $r['presidential_name'];
-                  $candidate =$r['presidential_id'];
-                  $election = $r['election_id'];
-                  $model = uniqid();
-                  $post = array(
-                    "election" =>$election,
-                    "candidate_hold"=>$candidate,
-                    "voter_hold"=>$GLOBALS['voter_id']
-                  );
+              <?php
+                  foreach ($presidential_candidate as $r){
+                    $photo = $r['photo'];
+                    $name = $r['presidential_name'];
+                    $candidate =$r['presidential_id'];
+                    $election = $r['election_id'];
+                    $model = uniqid();
+                    $post = array(
+                      "election" =>$election,
+                      "candidate_hold"=>$candidate,
+                      "voter_hold"=>$GLOBALS['voter_id']
+                    );
 
-                  $url = http_build_query($post);
+                    $url = http_build_query($post);
 
-                  echo "
-                    <div class='col-sm-6 col-lg-4'>
-                      <div class='card-wrap'>
-                          <div class='image-wrap'>
-                            <a href='#' id='my{$model}'>  
-                              <img src='{$photo}' style='width:499px;height:499px;'>
-                            </a>  
-                          </div>
-                          <div class='content-wrap'>
-                              <h5 class='mbr-section-title card-title mbr-fonts-style align-center m-0 display-5'>
-                                  <strong>{$name}</strong>
-                              </h5>
-                              <h6 class='mbr-role mbr-fonts-style align-center mb-3 display-4'>
-                                  <!--strong>Programmer</strong-->
-                              </h6>
-                          </div>
-                      </div>
-                  </div>
-    
-                    <script>
-                      $('#my{$model}').on('click',function(){
-                        Swal.fire({
-                            title: 'Are you sure?',
-                            text: 'Do you want to vote for {$name}',
-                            icon: 'warning',
-                            showCancelButton: true,
-                            confirmButtonText: 'Yes, Vote!',
-                            cancelButtonText: 'No, Cancel vote'
-                          }).then((result) => {
-                            if (result.isConfirmed) {
-                              location.replace('?_vote=cast-vote&{$url}')
-                              // For more information about handling dismissals please visit
-                              // https://sweetalert2.github.io/#handling-dismissals
-                            } else if (result.dismiss === Swal.DismissReason.cancel) {
-                              exit;
-                             }
+                    echo "
+                      <div class='col-sm-6 col-lg-4'>
+                        <div class='card-wrap'>
+                            <div class='image-wrap'>
+                              <a href='#' id='my{$model}'>  
+                                <img src='{$photo}' style='width:499px;height:499px;'>
+                              </a>  
+                            </div>
+                            <div class='content-wrap'>
+                                <h5 class='mbr-section-title card-title mbr-fonts-style align-center m-0 display-5'>
+                                    <strong>{$name}</strong>
+                                </h5>
+                                <h6 class='mbr-role mbr-fonts-style align-center mb-3 display-4'>
+                                    <!--strong>Programmer</strong-->
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+      
+                      <script>
+                        $('#my{$model}').on('click',function(){
+                          Swal.fire({
+                              title: 'Are you sure?',
+                              text: 'Do you want to vote for {$name}',
+                              icon: 'warning',
+                              showCancelButton: true,
+                              confirmButtonText: 'Yes, Vote!',
+                              cancelButtonText: 'No, Cancel vote'
+                            }).then((result) => {
+                              if (result.isConfirmed) {
+                                location.replace('?_vote=cast-vote&{$url}')
+                                // For more information about handling dismissals please visit
+                                // https://sweetalert2.github.io/#handling-dismissals
+                              } else if (result.dismiss === Swal.DismissReason.cancel) {
+                                exit;
+                              }
+                          })
                         })
-                      })
-                  </script>
-                  ";
-                }
+                    </script>
+                    ";
+                  }
               
               ?>           
         </div>  
@@ -101,9 +101,7 @@
   <script src="assets/tether/tether.min.js"></script> 
   <script src="assets/bootstrap/js/bootstrap.min.js"></script>  
   <script src="assets/smoothscroll/smooth-scroll.js"></script>  
-  <script src="assets/theme/js/script.js"></script>  
-  
-  
+  <script src="assets/theme/js/script.js"></script>
 </body>
 </html>
 
