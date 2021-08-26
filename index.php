@@ -20,6 +20,7 @@ if(!isset($_REQUEST['submit'])){
             }
         }else{
             if($_REQUEST["_vote"] === "true"){
+
                 $presidential_candidate = presidential_candidate::fetch($db);
                 if(!isset($image)){
                     $image ="assets/images/candidate.png";
@@ -28,6 +29,7 @@ if(!isset($_REQUEST['submit'])){
                 $GLOBALS['voter_id'] = $_GET['candidate_id'];
                 $label = $polling_box_lang['polling_page'];
                 require("polling_box/template/main.php");
+
             }elseif($_REQUEST["_vote"] === "cast-vote"){
 
                 $sql ='SELECT *,rowid "NAVICAT_ROWID" FROM "main"."tbl_voter_box" WHERE election_id=:election AND voter_id=:voter  LIMIT 0,1000';

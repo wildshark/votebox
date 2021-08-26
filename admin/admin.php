@@ -74,17 +74,37 @@ if(!isset($_SESSION['token'])){
 
             case"send-vote-result";
             
-                $sql ="SELECT mobile_num,rowid 'NAVICAT_ROWID' FROM 'main'.'tbl_candidate' LIMIT 0,1000";
+                $sql ="SELECT tbl_candidate.mobile_num FROM tbl_candidate WHERE tbl_candidate.mobile_num NOTNULL";
                 $stmt = $db->prepare($sql);
                 $stmt->execute();
 
                 if($stmt->fetchColumn() > 0){
-                    $row = $stmt->fetchall();
-                    $mobile = implode(",", $row['mobile_num']);
-                    echo $mobile;
-                }else{
+                    $rows = $stmt->fetchAll();
+                    foreach($rows as $r){
+                        $mobile[] = $r['mobile_num'];
+                    }
+                    $sms_mobile = implode(",", $mobile);
+
                     
+                    $sql ="SELECT tbl_voter_box.election_id, tbl_voter_box.candidate_id, count(tbl_voter_box.voter_id) AS total, tbl_presidential_candidate.presidential_name FROM tbl_voter_box INNER JOIN tbl_presidential_candidate ON tbl_voter_box.candidate_id = tbl_presidential_candidate.presidential_id WHERE tbl_voter_box.election_id = :election GROUP BY tbl_voter_box.candidate_id ORDER BY total DESC";
+                    $stmt = $db->prepare($sql);
+                    $stmt->bindParam(':election', $_GET['election']);
+                    $stmt->execute();
+                    $res = $stmt->fetch();
+
+                    $name = $res['presidential_name'];
+
+                    $_req['to'] = $sms_mobile;
+                    $_req['sender-id'] = 'srcelection';
+                    $_req['msg'] ="The winner of the 2021 SRC is {$name}";
+                    $sms = file_get_contents('https://app9.cf/sms/?'.http_build_query($_req));
+                    
+                    
+                }else{
+                    echo"No Mobile Number";
+                    exit();
                 }
+
 
             break;
     
