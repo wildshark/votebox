@@ -36,6 +36,7 @@
                 }
             },
             "administration":{
+                "copyright":"Copyright &copy; Your Website 2020",
                 "login_page":{
                     "title":"Welcome to Votebox!",
                     "CustomCheck":"Remember Me",
