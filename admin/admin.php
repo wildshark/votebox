@@ -71,6 +71,22 @@ if(!isset($_SESSION['token'])){
                 $label =$admin_lang['vote_box_page'];
                 require('template/add.votebox.php');
             break;
+
+            case"send-vote-result";
+            
+                $sql ="SELECT mobile_num,rowid 'NAVICAT_ROWID' FROM 'main'.'tbl_candidate' LIMIT 0,1000";
+                $stmt = $db->prepare($sql);
+                $stmt->execute();
+
+                if($stmt->fetchColumn() > 0){
+                    $row = $stmt->fetchall();
+                    $mobile = implode(",", $row['mobile_num']);
+                    echo $mobile;
+                }else{
+                    
+                }
+
+            break;
     
             default:
                 require('template/404.php');
