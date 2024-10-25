@@ -45,7 +45,3 @@ Our dedicated support team is available 24/7 to assist you with any queries or t
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to use this README as a template for introducing your VoteBox360 platform. Customize it with specific details about your services, pricing, and security measures. If you have any further questions or need assistance, don't hesitate to reach out. Happy voting!
